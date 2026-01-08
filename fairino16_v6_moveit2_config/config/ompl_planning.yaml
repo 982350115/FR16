@@ -1,0 +1,59 @@
+# ompl_planning.yaml
+planning_plugin: ompl_interface/OMPLPlanner  # <--- 加上这一行，强制声明插件类型
+
+
+  # ... (下面的内容保持不变)
+
+planner_configs:
+  SBLkConfigDefault:
+    type: geometric::SBL
+    range: 0.0  # Default: 0.0
+  ESTkConfigDefault:
+    type: geometric::EST
+    range: 0.0  # Default: 0.0
+  LBKPIECEkConfigDefault:
+    type: geometric::LBKPIECE
+    range: 0.0  # Default: 0.0
+  BKPIECEkConfigDefault:
+    type: geometric::BKPIECE
+    range: 0.0  # Default: 0.0
+  KPIECEkConfigDefault:
+    type: geometric::KPIECE
+    range: 0.0  # Default: 0.0
+  RRTkConfigDefault:
+    type: geometric::RRT
+    range: 0.0  # Default: 0.0
+  RRTConnectkConfigDefault:
+    type: geometric::RRTConnect
+    range: 0.0  # Default: 0.0
+  # -------------------------------------------------
+  # RRT* (RRTstar) 配置：消除大回环的关键
+  # -------------------------------------------------
+  RRTstarkConfigDefault:
+    type: geometric::RRTstar
+    range: 0.0  # 步长，0.0表示自动计算
+    goal_bias: 0.05 # 采样目标点的概率
+    delay_collision_checking: 1 # 延迟碰撞检测以提高速度
+  # -------------------------------------------------
+  PRMkConfigDefault:
+    type: geometric::PRM
+    max_nearest_neighbors: 10  # Default: 10
+  PRMstarkConfigDefault:
+    type: geometric::PRMstar
+    max_nearest_neighbors: 10  # Default: 10
+
+# 定义规划组使用的算法
+fairino16_v6_group:
+  # 【关键修改】将默认算法改为 RRTstar
+  default_planner_config: RRTstarkConfigDefault
+  planner_configs:
+    - SBLkConfigDefault
+    - ESTkConfigDefault
+    - LBKPIECEkConfigDefault
+    - BKPIECEkConfigDefault
+    - KPIECEkConfigDefault
+    - RRTkConfigDefault
+    - RRTConnectkConfigDefault
+    - RRTstarkConfigDefault  # 必须包含在列表中
+    - PRMkConfigDefault
+    - PRMstarkConfigDefault

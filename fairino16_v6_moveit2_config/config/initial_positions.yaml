@@ -1,0 +1,11 @@
+# Default initial positions for fairino16_v6_robot's ros2_control fake system
+
+initial_positions:
+  j1: 0
+  j2: 0
+  j3: 0
+  j4: 0
+  j5: 0
+  j6: 0
+  gripper_finger_left_joint: 0.04  # 打开状态
+  gripper_finger_right_joint: 0.04

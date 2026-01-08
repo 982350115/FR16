@@ -1,0 +1,72 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    # 定义控制器类型
+    fairino16_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    gripper_controller:
+      type: position_controllers/GripperActionController
+
+# ------------------------------------------------------------------
+# 关键修改：强制设置关节状态发布的 QoS
+# ------------------------------------------------------------------
+joint_state_broadcaster:
+  ros__parameters:
+    qos_overrides:
+      /joint_states:
+        publisher:
+          reliability: best_effort  # 必须匹配 MoveIt 的监听模式
+          durability: volatile      # 必须是易失的，不能是 transient_local
+          history: keep_last
+          depth: 1
+
+# ------------------------------------------------------------------
+# 机械臂控制器配置
+# ------------------------------------------------------------------
+fairino16_controller:
+  ros__parameters:
+    joints:
+      - j1
+      - j2
+      - j3
+      - j4
+      - j5
+      - j6
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      # - velocity  <-- [关键修改] 删掉或注释掉这一行！虚拟硬件通常没有速度反馈
+
+    # 添加必要的容差配置，防止仿真中稍微有点偏差就报错
+    allow_nonzero_velocity_at_trajectory_end: true
+    constraints:
+        goal_time: 2.0
+        stopped_velocity_tolerance: 0.05
+        j1: {trajectory: 0.2, goal: 0.1}
+        j2: {trajectory: 0.2, goal: 0.1}
+        j3: {trajectory: 0.2, goal: 0.1}
+        j4: {trajectory: 0.2, goal: 0.1}
+        j5: {trajectory: 0.2, goal: 0.1}
+        j6: {trajectory: 0.2, goal: 0.1}
+
+# ------------------------------------------------------------------
+# 夹爪控制器配置
+# ------------------------------------------------------------------
+gripper_controller:
+  ros__parameters:
+    joint: gripper_finger_left_joint
+    # [关键修改] 显式声明状态接口只用 position，防止它默认去找 velocity
+    state_interfaces:
+      - position
+    
+    # 其他安全参数
+    goal_tolerance: 0.01
+    stall_velocity_threshold: 0.001
+    stall_timeout: 1.0
