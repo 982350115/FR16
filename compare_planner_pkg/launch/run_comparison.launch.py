@@ -3,22 +3,25 @@ from launch_ros.actions import Node
 from moveit_configs_utils import MoveItConfigsBuilder
 
 def generate_launch_description():
-    # 加载配置 (确保包名和你之前的一致)
+    # 1. 加载 MoveIt 配置
+    # 这里会自动读取 fairino16_v6_moveit2_config 包里的 URDF 和 SRDF
     moveit_config = MoveItConfigsBuilder("fairino16_v6_robot", package_name="fairino16_v6_moveit2_config").to_moveit_configs()
 
-    # 定义使用默认算法的节点
-    default_planner_node = Node(
+    # 2. 定义节点
+    compare_node = Node(
         package="compare_planner_pkg",
-        executable="default_planner",
+        executable="compare_algorithms",
+        name="compare_algorithms_node", # 名字必须和 C++ 代码里 Node 初始化的一致
         output="screen",
         parameters=[
             moveit_config.robot_description,
             moveit_config.robot_description_semantic,
             moveit_config.robot_description_kinematics,
-            {"use_sim_time": False}, 
+            # 如果是仿真，这一项通常设为 True，但如果是 Mock 硬件或纯 Rviz，False 也没问题
+            {"use_sim_time": True}, 
         ],
     )
 
     return LaunchDescription([
-        default_planner_node,
+        compare_node,
     ])

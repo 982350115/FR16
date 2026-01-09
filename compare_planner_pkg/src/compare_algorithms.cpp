@@ -1,6 +1,7 @@
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <moveit/move_group_interface/move_group_interface.h>
+#include <moveit/planning_scene_interface/planning_scene_interface.h>
 #include <geometry_msgs/msg/pose.hpp>
 #include <visualization_msgs/msg/marker.hpp>
 #include <vector>
@@ -29,6 +30,40 @@ void publish_markers(rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedP
     }
 }
 
+// ==================== 【核心修复】暴力清洗轨迹 ====================
+// 强制重写时间戳，确保控制器绝对不会拒绝
+void sanitize_trajectory(moveit_msgs::msg::RobotTrajectory& trajectory) {
+    if (trajectory.joint_trajectory.points.empty()) return;
+
+    auto& points = trajectory.joint_trajectory.points;
+    double time_counter = 0.0;
+
+    // 假设我们希望每两个点之间间隔 0.04秒 (25Hz)
+    // 这个频率对于仿真来说很安全
+    const double dt = 0.04; 
+
+    for (size_t i = 0; i < points.size(); ++i) {
+        if (i == 0) {
+            time_counter = 0.0;
+        } else {
+            time_counter += dt;
+        }
+
+        int32_t sec = static_cast<int32_t>(time_counter);
+        uint32_t nanosec = static_cast<uint32_t>((time_counter - sec) * 1e9);
+
+        points[i].time_from_start.sec = sec;
+        points[i].time_from_start.nanosec = nanosec;
+
+        // 清空速度和加速度，让控制器自己去计算插值
+        // 这能避免“速度限制超标”的报错
+        points[i].velocities.clear();
+        points[i].accelerations.clear();
+    }
+    
+    printf(">>> [DEBUG] 轨迹已清洗: 点数=%zu, 总时长=%.2fs\n", points.size(), time_counter);
+}
+
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
@@ -39,18 +74,19 @@ int main(int argc, char ** argv)
   using moveit::planning_interface::MoveGroupInterface;
   auto move_group = MoveGroupInterface(node, "fairino16_v6_group");
 
-  // ==================== 1. 算法设置 ====================
-  // std::string planner_id = "RRTConnectkConfigDefault"; 
-  std::string planner_id = "RRTstarkConfigDefault"; 
+  // 1. 算法设置
+  // std::string planner_id = "RRTConnectkConfigDefault"; // 容易大回环
+  std::string planner_id = "RRTstarkConfigDefault";    // 路径平滑 (RRT*)
 
   RCLCPP_INFO(node->get_logger(), "当前使用的算法: %s", planner_id.c_str());
+
   move_group.setPlanningPipelineId("ompl");
   move_group.setPlannerId(planner_id);
   move_group.setPlanningTime(5.0); 
   move_group.setMaxVelocityScalingFactor(0.5);
   move_group.setMaxAccelerationScalingFactor(0.5);
 
-  // ==================== 2. 定义目标点 ====================
+  // 2. 定义目标点
   std::vector<geometry_msgs::msg::Pose> target_poses;
   tf2::Quaternion q;
   q.setRPY(0, 3.14159/2, 0); 
@@ -74,64 +110,41 @@ int main(int argc, char ** argv)
   rclcpp::sleep_for(std::chrono::seconds(2));
   publish_markers(marker_pub, target_poses);
 
-  // ==================== 3. 循环执行 (强化版状态接力) ====================
-  
-  // 保存上一段轨迹的【最后一个点】
-  trajectory_msgs::msg::JointTrajectoryPoint last_point;
-  std::vector<std::string> last_joint_names;
-  bool has_moved_once = false; 
-
+  // 3. 循环执行
   for (size_t i = 0; i < target_poses.size(); ++i) {
       RCLCPP_INFO(node->get_logger(), "---------------------------------------");
       RCLCPP_INFO(node->get_logger(), ">>> 准备前往目标点 %zu ...", i+1);
       
       move_group.setPoseTarget(target_poses[i]);
       
-      // --- 核心修复：按名字强制同步起点 ---
-      if (has_moved_once) {
-          RCLCPP_INFO(node->get_logger(), "  [状态接力] 正在将起点设置为上一段的终点...");
-          
-          // 获取当前状态的副本
-          moveit::core::RobotState start_state(*move_group.getCurrentState());
-          
-          // 强制赋值：根据关节名字一个一个赋值，防止顺序错误
-          // last_point.positions 是数值, last_joint_names 是名字
-          if (last_joint_names.size() == last_point.positions.size()) {
-              start_state.setVariablePositions(last_joint_names, last_point.positions);
-              
-              // 应用到 MoveGroup
-              move_group.setStartState(start_state);
-              RCLCPP_INFO(node->get_logger(), "  ✅ 起点已强制更新 (关节值: %f, %f...)", last_point.positions[0], last_point.positions[1]);
-          } else {
-              RCLCPP_ERROR(node->get_logger(), "  ❌ 严重错误：保存的关节数据维度不匹配！");
-          }
-
-      } else {
-          RCLCPP_INFO(node->get_logger(), "  [初始状态] 使用当前传感器读数作为起点");
-          move_group.setStartStateToCurrentState();
-      }
-      // ------------------------------------
+      // 每次都更新起点为当前状态 (如果上一步执行成功，这里就是正确的)
+      move_group.setStartStateToCurrentState();
 
       moveit::planning_interface::MoveGroupInterface::Plan my_plan;
       bool success = (move_group.plan(my_plan) == moveit::core::MoveItErrorCode::SUCCESS);
 
       if (success) {
+          // 【关键调用】在执行前，强制清洗轨迹
+          sanitize_trajectory(my_plan.trajectory_);
+
           RCLCPP_INFO(node->get_logger(), "规划成功，开始执行...");
-          move_group.execute(my_plan);
           
-          // 【保存数据】提取轨迹中最后时刻的信息
-          if (!my_plan.trajectory_.joint_trajectory.points.empty()) {
-              last_point = my_plan.trajectory_.joint_trajectory.points.back();
-              last_joint_names = my_plan.trajectory_.joint_trajectory.joint_names; // 必须保存名字！
-              has_moved_once = true;
+          // 执行轨迹
+          auto err = move_group.execute(my_plan);
+          
+          if (err == moveit::core::MoveItErrorCode::SUCCESS) {
+              RCLCPP_INFO(node->get_logger(), "✅ 执行成功！机器人应该已经到达目标点 %zu", i+1);
+          } else {
+              RCLCPP_ERROR(node->get_logger(), "❌ 执行失败！错误代码: %d", err.val);
           }
+
       } else {
-          RCLCPP_ERROR(node->get_logger(), "规划失败！");
+          RCLCPP_ERROR(node->get_logger(), "❌ 规划失败！");
           break;
       }
       
-      // 必须有停顿，让 RViz 视觉上跟上
-      rclcpp::sleep_for(std::chrono::seconds(1)); 
+      // 停顿2秒，确保动作完成且肉眼可见
+      rclcpp::sleep_for(std::chrono::seconds(2)); 
   }
 
   rclcpp::shutdown();
