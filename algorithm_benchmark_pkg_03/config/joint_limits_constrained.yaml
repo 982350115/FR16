@@ -1,0 +1,56 @@
+# 核心修改：添加 has_position_limits 和 min/max_position
+# 目的：消除大回环，强制在前向空间规划
+
+default_velocity_scaling_factor: 0.1
+default_acceleration_scaling_factor: 0.1
+
+joint_limits:
+  j1:
+    # === 关键修改 ===
+    # 限制在 +/- 90度 (1.57弧度)，强制机器人面朝前方
+    has_position_limits: true
+    min_position: -1.57
+    max_position: 1.57
+    # =================
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: false
+    max_acceleration: 0
+  j2:
+    # j2 通常不需要大幅修改，保持默认或依赖 URDF
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: false
+    max_acceleration: 0
+  j3:
+    has_velocity_limits: true
+    max_velocity: 3.14
+    has_acceleration_limits: false
+    max_acceleration: 0
+  j4:
+    # === 关键修改 ===
+    # 限制在 +/- 175度，防止手腕绕圈
+    has_position_limits: true
+    min_position: -3.05
+    max_position: 3.05
+    # ================
+    has_velocity_limits: true
+    max_velocity: 3.2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  j5:
+    has_velocity_limits: true
+    max_velocity: 3.2
+    has_acceleration_limits: false
+    max_acceleration: 0
+  j6:
+    # === 关键修改 ===
+    # 限制在 +/- 175度
+    has_position_limits: true
+    min_position: -3.05
+    max_position: 3.05
+    # ================
+    has_velocity_limits: true
+    max_velocity: 3.2
+    has_acceleration_limits: false
+    max_acceleration: 0
