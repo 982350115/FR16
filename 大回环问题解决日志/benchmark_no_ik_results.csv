@@ -1,0 +1,11 @@
+Algorithm,TargetID,PlanningTime,PathLength,Success
+RRTConnect,1,0.357708,5.24948,true
+RRTConnect,2,0.0427912,6.02168,true
+RRTConnect,3,0.0377818,2.74269,true
+RRTConnect,4,0.120317,0,false
+RRTStar,1,5.01128,1.75405,true
+RRTStar,2,5.01192,1.64632,true
+RRTStar,3,5.01418,0.416908,true
+RRTStar,4,5.01693,0,false
+Pilz_PTP,1,0.011236,2.77061,true
+Pilz_PTP,2,0.0159678,0,false

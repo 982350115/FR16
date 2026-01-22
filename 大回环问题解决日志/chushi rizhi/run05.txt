@@ -1,0 +1,17 @@
+[INFO] [launch]: All log files can be found below /home/wrx/.ros/log/2026-01-13-14-26-26-809032-wrx-virtual-machine-76906
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [benchmark_node-1]: process started with pid [76912]
+[benchmark_node-1] [INFO] [1768285587.210267878] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0534972 seconds
+[benchmark_node-1] [INFO] [1768285587.210356557] [moveit_robot_model.robot_model]: Loading robot model 'fairino16_v6_robot'...
+[benchmark_node-1] [INFO] [1768285587.210374730] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[benchmark_node-1] [INFO] [1768285587.379472018] [move_group_interface]: Ready to take commands for planning group fairino16_v6_group.
+[benchmark_node-1] [INFO] [1768285587.379724423] [benchmark_node]: === 开始对照组实验 (无 IK 优化 - 复现大回环) ===
+[benchmark_node-1] [INFO] [1768285587.379899529] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768285587.382202981] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768285587.407644309] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768285587.408144829] [move_group_interface]: time taken to generate plan: 0.0198792 seconds
+[benchmark_node-1] [INFO] [1768285587.409566915] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[benchmark_node-1] [INFO] [1768285588.416138729] [moveit_ros.current_state_monitor]: Didn't receive robot state (joint angles) with recent timestamp within 1.000000 seconds. Requested time 1768285587.409582, but latest received state has time 0.000000.
+[benchmark_node-1] Check clock synchronization if your are running ROS across multiple machines!
+[benchmark_node-1] [ERROR] [1768285588.416213420] [move_group_interface]: Failed to fetch current robot state
+[ERROR] [benchmark_node-1]: process has died [pid 76912, exit code -11, cmd '/home/wrx/FR15_01/install/algorithm_benchmark_pkg/lib/algorithm_benchmark_pkg/benchmark_node --ros-args -r __node:=benchmark_node --params-file /tmp/launch_params_pcgghb80 --params-file /tmp/launch_params_jcj09xyo --params-file /tmp/launch_params_5mk6rpq6'].

@@ -1,0 +1,111 @@
+[INFO] [launch]: All log files can be found below /home/wrx/.ros/log/2026-01-13-14-33-46-800946-wrx-virtual-machine-78877
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [benchmark_node-1]: process started with pid [78887]
+[benchmark_node-1] [INFO] [1768286027.152045957] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.0490757 seconds
+[benchmark_node-1] [INFO] [1768286027.152164236] [moveit_robot_model.robot_model]: Loading robot model 'fairino16_v6_robot'...
+[benchmark_node-1] [INFO] [1768286027.152182970] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[benchmark_node-1] [INFO] [1768286030.011164129] [move_group_interface]: Ready to take commands for planning group fairino16_v6_group.
+[benchmark_node-1] [INFO] [1768286030.011291200] [benchmark_node]: === 开始对照组实验 (无 IK 优化 - 复现大回环) ===
+[benchmark_node-1] [INFO] [1768286030.011453156] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286030.059582952] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286030.061652423] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286030.061897738] [move_group_interface]: time taken to generate plan: 0.0165999 seconds
+[benchmark_node-1] [INFO] [1768286030.063863275] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[benchmark_node-1] [WARN] [1768286030.068154393] [moveit_trajectory_processing.time_optimal_trajectory_generation]: Joint acceleration limits are not defined. Using the default 1 rad/s^2. You can define acceleration limits in the URDF or joint_limits.yaml.
+[benchmark_node-1] [INFO] [1768286030.069983351] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286031.596980492] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286032.606454023] [benchmark_node]: ********** 测试算法: RRTConnect (NO IK) **********
+[benchmark_node-1] [INFO] [1768286032.606617601] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286032.609884916] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286032.640009830] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286032.641742940] [move_group_interface]: time taken to generate plan: 0.0194766 seconds
+[benchmark_node-1] [INFO] [1768286032.648345652] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286032.737858421] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286033.740709673] [benchmark_node]: --- 前往目标点 [1 / 6] ---
+[benchmark_node-1] [INFO] [1768286033.741349318] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286033.742659453] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286033.929341529] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286033.929770423] [move_group_interface]: time taken to generate plan: 0.154302 seconds
+[benchmark_node-1] [INFO] [1768286033.939880224] [benchmark_node]: 规划成功 | 耗时: 0.1887s | 长度: 5.2503
+[benchmark_node-1] [INFO] [1768286033.942113730] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286037.268138723] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286037.769277628] [benchmark_node]: --- 前往目标点 [2 / 6] ---
+[benchmark_node-1] [INFO] [1768286037.769662185] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286037.771599470] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286037.804549774] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286037.804999021] [move_group_interface]: time taken to generate plan: 0.0243574 seconds
+[benchmark_node-1] [INFO] [1768286037.818243111] [benchmark_node]: 规划成功 | 耗时: 0.0356s | 长度: 5.7814
+[benchmark_node-1] [INFO] [1768286037.819115459] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286041.420995805] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286041.922985580] [benchmark_node]: --- 前往目标点 [3 / 6] ---
+[benchmark_node-1] [INFO] [1768286041.923562101] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286041.925843798] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286041.946336698] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286041.947332222] [move_group_interface]: time taken to generate plan: 0.0134934 seconds
+[benchmark_node-1] [INFO] [1768286041.957729873] [benchmark_node]: 规划成功 | 耗时: 0.0242s | 长度: 0.4165
+[benchmark_node-1] [INFO] [1768286041.960178102] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286046.790236127] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286047.291888770] [benchmark_node]: --- 前往目标点 [4 / 6] ---
+[benchmark_node-1] [INFO] [1768286047.292059119] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286047.296436426] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286047.369614625] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286047.369949677] [move_group_interface]: time taken to generate plan: 0.0662176 seconds
+[benchmark_node-1] [INFO] [1768286047.380029108] [benchmark_node]: 规划成功 | 耗时: 0.0780s | 长度: 5.8527
+[benchmark_node-1] [INFO] [1768286047.381935898] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286050.983349388] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286051.485730339] [benchmark_node]: --- 前往目标点 [5 / 6] ---
+[benchmark_node-1] [INFO] [1768286051.485918184] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286051.487992865] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286051.668417340] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286051.669261119] [move_group_interface]: time taken to generate plan: 0.143845 seconds
+[benchmark_node-1] [INFO] [1768286051.681362761] [benchmark_node]: 规划成功 | 耗时: 0.1836s | 长度: 0.4446
+[benchmark_node-1] [INFO] [1768286051.683964357] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286052.952302687] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286053.453802271] [benchmark_node]: --- 前往目标点 [6 / 6] ---
+[benchmark_node-1] [INFO] [1768286053.454011438] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286053.458024190] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286054.285868524] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286054.286791475] [move_group_interface]: time taken to generate plan: 0.792277 seconds
+[benchmark_node-1] [INFO] [1768286054.298228423] [benchmark_node]: 规划成功 | 耗时: 0.8329s | 长度: 5.2612
+[benchmark_node-1] [INFO] [1768286054.302707114] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286057.987009932] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286058.488296459] [benchmark_node]: ********** 测试算法: RRTStar (NO IK) **********
+[benchmark_node-1] [INFO] [1768286058.488544625] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286058.489184771] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286058.514817008] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286058.514943670] [move_group_interface]: time taken to generate plan: 0.0159939 seconds
+[benchmark_node-1] [INFO] [1768286058.536369956] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286061.100510341] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286062.101666837] [benchmark_node]: --- 前往目标点 [1 / 6] ---
+[benchmark_node-1] [INFO] [1768286062.101867849] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286062.102884302] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286067.109901603] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286067.111087327] [move_group_interface]: time taken to generate plan: 5.00233 seconds
+[benchmark_node-1] [INFO] [1768286067.117726175] [benchmark_node]: 规划成功 | 耗时: 5.0094s | 长度: 3.7986
+[benchmark_node-1] [INFO] [1768286067.123173523] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286070.627747051] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286071.128129931] [benchmark_node]: --- 前往目标点 [2 / 6] ---
+[benchmark_node-1] [INFO] [1768286071.128382620] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286071.129603826] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286076.140137684] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286076.140645341] [move_group_interface]: time taken to generate plan: 5.00223 seconds
+[benchmark_node-1] [INFO] [1768286076.151132347] [benchmark_node]: 规划成功 | 耗时: 5.0124s | 长度: 2.7111
+[benchmark_node-1] [INFO] [1768286076.154302175] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286081.720550517] [move_group_interface]: Execute request aborted
+[benchmark_node-1] [ERROR] [1768286081.721612295] [move_group_interface]: MoveGroupInterface::execute() failed or timeout reached
+[benchmark_node-1] [ERROR] [1768286081.721723930] [benchmark_node]: 执行失败! 错误码: -4
+[benchmark_node-1] [INFO] [1768286081.721990006] [benchmark_node]: ********** 测试算法: Pilz_PTP (NO IK) **********
+[benchmark_node-1] [INFO] [1768286081.722556576] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286081.725821736] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286081.738384021] [move_group_interface]: Planning request complete!
+[benchmark_node-1] [INFO] [1768286081.739080183] [move_group_interface]: time taken to generate plan: 0.00775243 seconds
+[benchmark_node-1] [INFO] [1768286081.756602935] [move_group_interface]: Execute request accepted
+[benchmark_node-1] [INFO] [1768286084.186610195] [move_group_interface]: Execute request success!
+[benchmark_node-1] [INFO] [1768286085.189193137] [benchmark_node]: --- 前往目标点 [1 / 6] ---
+[benchmark_node-1] [INFO] [1768286085.189338574] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node-1] [INFO] [1768286085.193577484] [move_group_interface]: Planning request accepted
+[benchmark_node-1] [INFO] [1768286085.214488141] [move_group_interface]: Planning request aborted
+[benchmark_node-1] [ERROR] [1768286085.217776972] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[benchmark_node-1] [ERROR] [1768286085.217839434] [benchmark_node]: 规划失败!
+[benchmark_node-1] [INFO] [1768286085.218231815] [benchmark_node]: 对照组实验结束！
+[INFO] [benchmark_node-1]: process has finished cleanly [pid 78887]

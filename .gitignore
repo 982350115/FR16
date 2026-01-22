@@ -1,0 +1,15 @@
+build/
+install/
+log/
+colcon/
+
+# Python 缓存文件
+__pycache__/
+*.pyc
+
+# VS Code 等编辑器的配置文件夹 (可选，建议忽略)
+.vscode/
+
+# 临时文件
+*.swp
+*~

@@ -1,0 +1,246 @@
+[INFO] [launch]: All log files can be found below /home/wrx/.ros/log/2026-01-16-15-13-29-650490-wrx-virtual-machine-16440
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [benchmark_node_03-1]: process started with pid [16457]
+[benchmark_node_03-1] [INFO] [1768547610.316134453] [moveit_rdf_loader.rdf_loader]: Loaded robot model in 0.035801 seconds
+[benchmark_node_03-1] [INFO] [1768547610.316261287] [moveit_robot_model.robot_model]: Loading robot model 'fairino16_v6_robot'...
+[benchmark_node_03-1] [INFO] [1768547610.316277983] [moveit_robot_model.robot_model]: No root/virtual joint specified in SRDF. Assuming fixed joint
+[benchmark_node_03-1] [INFO] [1768547610.940203801] [move_group_interface]: Ready to take commands for planning group fairino16_v6_group.
+[benchmark_node_03-1] [INFO] [1768547611.940765385] [benchmark_node_03]: === 开始算法对比实验 03 (含关节诊断) ===
+[benchmark_node_03-1] [INFO] [1768547611.941181573] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547611.944176243] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547611.987921034] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547611.988489558] [move_group_interface]: time taken to generate plan: 0.0211782 seconds
+[benchmark_node_03-1] [INFO] [1768547611.989442712] [moveit_ros.current_state_monitor]: Listening to joint states on topic 'joint_states'
+[benchmark_node_03-1] [INFO] [1768547612.000683835] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547612.091288278] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547613.099437437] [benchmark_node_03]: ********** 测试算法: RRTConnect **********
+[benchmark_node_03-1] [INFO] [1768547613.099588450] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547613.100416971] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547613.124681044] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547613.125376798] [move_group_interface]: time taken to generate plan: 0.0139646 seconds
+[benchmark_node_03-1] [INFO] [1768547613.133363989] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547613.221013721] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547613.721185611] [benchmark_node_03]: --- 前往目标点 [1 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547613.729576271] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547613.729658413] [benchmark_node_03]: J1: Start= 0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729672957] [benchmark_node_03]: J2: Start= 0.000 -> Target=-0.017 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729682880] [benchmark_node_03]: J3: Start= 0.000 -> Target= 0.701 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729691275] [benchmark_node_03]: J4: Start= 0.000 -> Target= 1.151 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729699228] [benchmark_node_03]: J5: Start= 0.000 -> Target=-0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729707330] [benchmark_node_03]: J6: Start= 0.000 -> Target=-1.835 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547613.729794662] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547613.730896961] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547613.753234060] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547613.753900347] [move_group_interface]: time taken to generate plan: 0.0123953 seconds
+[benchmark_node_03-1] [INFO] [1768547613.760829849] [benchmark_node_03]: 规划成功 | 耗时: 0.0242 | 长度: 2.2765
+[benchmark_node_03-1] [INFO] [1768547613.762860524] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547615.289664664] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547615.790695925] [benchmark_node_03]: --- 前往目标点 [2 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547615.801456506] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547615.801530997] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.264 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801545291] [benchmark_node_03]: J2: Start=-0.017 -> Target= 0.726 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801555240] [benchmark_node_03]: J3: Start= 0.701 -> Target=-0.768 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801564339] [benchmark_node_03]: J4: Start= 1.151 -> Target= 3.184 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801572924] [benchmark_node_03]: J5: Start= 0.000 -> Target=-0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801581346] [benchmark_node_03]: J6: Start=-1.835 -> Target=-3.142 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547615.801667597] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547615.802599889] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547615.834123119] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547615.835173215] [move_group_interface]: time taken to generate plan: 0.0220142 seconds
+[benchmark_node_03-1] [INFO] [1768547615.840291902] [benchmark_node_03]: 规划成功 | 耗时: 0.0336 | 长度: 2.1085
+[benchmark_node_03-1] [INFO] [1768547615.840794174] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547617.169676363] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547617.670474473] [benchmark_node_03]: --- 前往目标点 [3 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547617.680103273] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547617.680201289] [benchmark_node_03]: J1: Start= 0.264 -> Target= 0.264 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680216106] [benchmark_node_03]: J2: Start= 0.725 -> Target= 0.303 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680225699] [benchmark_node_03]: J3: Start=-0.768 -> Target= 0.449 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680234786] [benchmark_node_03]: J4: Start= 1.484 -> Target= 2.390 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680242996] [benchmark_node_03]: J5: Start=-0.264 -> Target=-0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680251277] [benchmark_node_03]: J6: Start=-3.054 -> Target=-3.142 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547617.680368494] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547617.681044307] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547617.711720326] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547617.711730152] [move_group_interface]: time taken to generate plan: 0.0199528 seconds
+[benchmark_node_03-1] [INFO] [1768547617.719426234] [benchmark_node_03]: 规划成功 | 耗时: 0.0315 | 长度: 1.2885
+[benchmark_node_03-1] [INFO] [1768547617.720810918] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547618.899603327] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547619.400778234] [benchmark_node_03]: --- 前往目标点 [4 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547619.410245669] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547619.410325543] [benchmark_node_03]: J1: Start= 0.264 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410340681] [benchmark_node_03]: J2: Start= 0.302 -> Target= 0.245 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410350677] [benchmark_node_03]: J3: Start= 0.449 -> Target= 0.481 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410359312] [benchmark_node_03]: J4: Start= 1.483 -> Target= 1.590 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410368051] [benchmark_node_03]: J5: Start=-0.264 -> Target=-0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410377093] [benchmark_node_03]: J6: Start=-3.054 -> Target=-2.316 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547619.410471182] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547619.411455724] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547619.444562351] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547619.445053667] [move_group_interface]: time taken to generate plan: 0.0222467 seconds
+[benchmark_node_03-1] [INFO] [1768547619.449331770] [benchmark_node_03]: 规划成功 | 耗时: 0.0347 | 长度: 0.8302
+[benchmark_node_03-1] [INFO] [1768547619.451180004] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547620.332481255] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547620.833854311] [benchmark_node_03]: --- 前往目标点 [5 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547620.840726750] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547620.840856246] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.840888961] [benchmark_node_03]: J2: Start= 0.244 -> Target= 0.017 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.840912136] [benchmark_node_03]: J3: Start= 0.481 -> Target= 0.751 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.840932722] [benchmark_node_03]: J4: Start= 1.483 -> Target= 1.497 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.840952757] [benchmark_node_03]: J5: Start=-0.000 -> Target=-0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.840972503] [benchmark_node_03]: J6: Start=-2.316 -> Target=-2.265 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547620.841159789] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547620.842239376] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547620.877991156] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547620.878589816] [move_group_interface]: time taken to generate plan: 0.0243339 seconds
+[benchmark_node_03-1] [INFO] [1768547620.889375047] [benchmark_node_03]: 规划成功 | 耗时: 0.0376 | 长度: 0.3564
+[benchmark_node_03-1] [INFO] [1768547620.891140930] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547621.430945892] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547621.931424832] [benchmark_node_03]: --- 前往目标点 [6 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547621.939360318] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547621.939429038] [benchmark_node_03]: J1: Start= 0.000 -> Target=-0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939442811] [benchmark_node_03]: J2: Start= 0.017 -> Target= 0.186 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939452035] [benchmark_node_03]: J3: Start= 0.751 -> Target= 0.139 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939460307] [benchmark_node_03]: J4: Start= 1.483 -> Target= 3.082 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939468399] [benchmark_node_03]: J5: Start=-0.000 -> Target= 0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939476653] [benchmark_node_03]: J6: Start=-2.265 -> Target=-3.407 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547621.939561003] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547621.940401131] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547621.969327869] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547621.969442814] [move_group_interface]: time taken to generate plan: 0.0149367 seconds
+[benchmark_node_03-1] [INFO] [1768547621.980318674] [benchmark_node_03]: 规划成功 | 耗时: 0.0300 | 长度: 1.0126
+[benchmark_node_03-1] [INFO] [1768547621.982072297] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547622.891663036] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547623.392813093] [benchmark_node_03]: ********** 测试算法: RRTStar **********
+[benchmark_node_03-1] [INFO] [1768547623.393061732] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547623.394244938] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547623.418990171] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547623.419022861] [move_group_interface]: time taken to generate plan: 0.0166688 seconds
+[benchmark_node_03-1] [INFO] [1768547623.433796295] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547625.709624405] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547626.209970841] [benchmark_node_03]: --- 前往目标点 [1 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547626.220402277] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547626.220462605] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220476745] [benchmark_node_03]: J2: Start=-0.000 -> Target=-0.017 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220485693] [benchmark_node_03]: J3: Start=-0.000 -> Target= 0.701 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220493874] [benchmark_node_03]: J4: Start= 0.000 -> Target= 1.151 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220501915] [benchmark_node_03]: J5: Start=-0.000 -> Target=-0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220510056] [benchmark_node_03]: J6: Start=-0.000 -> Target=-1.835 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547626.220627247] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547626.223379658] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547631.246996854] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547631.247452738] [move_group_interface]: time taken to generate plan: 5.0065 seconds
+[benchmark_node_03-1] [INFO] [1768547631.250539250] [benchmark_node_03]: 规划成功 | 耗时: 5.0270 | 长度: 2.2765
+[benchmark_node_03-1] [INFO] [1768547631.252376512] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547632.792081059] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547633.293679352] [benchmark_node_03]: --- 前往目标点 [2 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547633.300416228] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547633.300500769] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.264 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300516652] [benchmark_node_03]: J2: Start=-0.017 -> Target=-0.330 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300527092] [benchmark_node_03]: J3: Start= 0.701 -> Target= 1.065 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300536400] [benchmark_node_03]: J4: Start= 1.151 -> Target=-0.735 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300545825] [benchmark_node_03]: J5: Start=-0.000 -> Target= 0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300554793] [benchmark_node_03]: J6: Start=-1.835 -> Target= 0.000 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547633.300665663] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547633.301720187] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547638.316579875] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547638.316682151] [move_group_interface]: time taken to generate plan: 5.00181 seconds
+[benchmark_node_03-1] [INFO] [1768547638.320247166] [benchmark_node_03]: 规划成功 | 耗时: 5.0161 | 长度: 2.7007
+[benchmark_node_03-1] [INFO] [1768547638.321808190] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547639.900207213] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547640.401875310] [benchmark_node_03]: --- 前往目标点 [3 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547640.411078714] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547640.411214642] [benchmark_node_03]: J1: Start= 0.264 -> Target= 0.264 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411247996] [benchmark_node_03]: J2: Start=-0.330 -> Target=-0.172 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411271318] [benchmark_node_03]: J3: Start= 1.065 -> Target= 0.980 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411293143] [benchmark_node_03]: J4: Start=-0.735 -> Target=-0.808 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411313974] [benchmark_node_03]: J5: Start= 0.264 -> Target= 0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411337238] [benchmark_node_03]: J6: Start=-0.000 -> Target= 0.000 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547640.411517037] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547640.414949805] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547645.424923218] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547645.425101616] [move_group_interface]: time taken to generate plan: 5.00167 seconds
+[benchmark_node_03-1] [INFO] [1768547645.429418542] [benchmark_node_03]: 规划成功 | 耗时: 5.0138 | 长度: 0.1927
+[benchmark_node_03-1] [INFO] [1768547645.430114539] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547645.870619690] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547646.371591873] [benchmark_node_03]: --- 前往目标点 [4 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547646.379461438] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547646.379537769] [benchmark_node_03]: J1: Start= 0.264 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379551961] [benchmark_node_03]: J2: Start=-0.172 -> Target=-0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379561426] [benchmark_node_03]: J3: Start= 0.980 -> Target= 1.259 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379569912] [benchmark_node_03]: J4: Start=-0.808 -> Target=-0.998 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379578511] [benchmark_node_03]: J5: Start= 0.264 -> Target= 0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379586734] [benchmark_node_03]: J6: Start= 0.000 -> Target= 0.003 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547646.379680131] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547646.380877050] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547651.395323927] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547651.396669398] [move_group_interface]: time taken to generate plan: 5.00214 seconds
+[benchmark_node_03-1] [INFO] [1768547651.399992321] [benchmark_node_03]: 规划成功 | 耗时: 5.0171 | 长度: 0.5109
+[benchmark_node_03-1] [INFO] [1768547651.401045792] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547651.930841563] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547652.431465468] [benchmark_node_03]: --- 前往目标点 [5 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547652.439504277] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547652.439647737] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.439704398] [benchmark_node_03]: J2: Start=-0.264 -> Target=-0.430 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.439797744] [benchmark_node_03]: J3: Start= 1.259 -> Target= 1.343 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.439851022] [benchmark_node_03]: J4: Start=-0.998 -> Target=-0.938 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.439862425] [benchmark_node_03]: J5: Start= 0.000 -> Target= 0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.439871482] [benchmark_node_03]: J6: Start= 0.003 -> Target= 0.024 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547652.440010054] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547652.440827673] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547657.452969478] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547657.454077937] [move_group_interface]: time taken to generate plan: 5.00247 seconds
+[benchmark_node_03-1] [INFO] [1768547657.459448693] [benchmark_node_03]: 规划成功 | 耗时: 5.0142 | 长度: 0.1963
+[benchmark_node_03-1] [INFO] [1768547657.460704432] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547657.901025818] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547658.401349991] [benchmark_node_03]: --- 前往目标点 [6 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547658.410064017] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547658.410168786] [benchmark_node_03]: J1: Start= 0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410188256] [benchmark_node_03]: J2: Start=-0.430 -> Target=-0.276 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410246192] [benchmark_node_03]: J3: Start= 1.343 -> Target= 0.671 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410257961] [benchmark_node_03]: J4: Start=-0.938 -> Target=-0.853 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410267421] [benchmark_node_03]: J5: Start=-0.000 -> Target= 0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410276259] [benchmark_node_03]: J6: Start= 0.024 -> Target= 0.458 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547658.410374478] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547658.411257623] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547663.427253592] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547663.428454819] [move_group_interface]: time taken to generate plan: 5.00178 seconds
+[benchmark_node_03-1] [INFO] [1768547663.429648316] [benchmark_node_03]: 规划成功 | 耗时: 5.0182 | 长度: 0.8189
+[benchmark_node_03-1] [INFO] [1768547663.430530712] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547664.270997544] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547664.771370411] [benchmark_node_03]: ********** 测试算法: Pilz_PTP **********
+[benchmark_node_03-1] [INFO] [1768547664.771667919] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547664.772535339] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547664.790661517] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547664.791210934] [move_group_interface]: time taken to generate plan: 0.00815499 seconds
+[benchmark_node_03-1] [INFO] [1768547664.802763552] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547665.739673601] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547666.240379191] [benchmark_node_03]: --- 前往目标点 [1 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547666.251386620] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547666.251470014] [benchmark_node_03]: J1: Start=-0.000 -> Target= 0.000 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251485877] [benchmark_node_03]: J2: Start= 0.000 -> Target=-0.017 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251496075] [benchmark_node_03]: J3: Start=-0.000 -> Target= 0.701 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251505105] [benchmark_node_03]: J4: Start= 0.000 -> Target= 1.151 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251553206] [benchmark_node_03]: J5: Start= 0.000 -> Target=-0.000 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251563742] [benchmark_node_03]: J6: Start=-0.000 -> Target=-1.835 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547666.251661504] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547666.256471677] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547666.262131655] [move_group_interface]: Planning request complete!
+[benchmark_node_03-1] [INFO] [1768547666.262296577] [move_group_interface]: time taken to generate plan: 0.00023665 seconds
+[benchmark_node_03-1] [INFO] [1768547666.262334293] [benchmark_node_03]: 规划成功 | 耗时: 0.0108 | 长度: 2.2766
+[benchmark_node_03-1] [INFO] [1768547666.263377264] [move_group_interface]: Execute request accepted
+[benchmark_node_03-1] [INFO] [1768547667.799575503] [move_group_interface]: Execute request success!
+[benchmark_node_03-1] [INFO] [1768547668.300129211] [benchmark_node_03]: --- 前往目标点 [2 / 6] ---
+[benchmark_node_03-1] [INFO] [1768547668.310611994] [benchmark_node_03]: >>> 关节限位诊断 <<<
+[benchmark_node_03-1] [INFO] [1768547668.310687875] [benchmark_node_03]: J1: Start= 0.000 -> Target= 0.264 | Limit=+/-2.356 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310702333] [benchmark_node_03]: J2: Start=-0.017 -> Target= 0.726 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310712202] [benchmark_node_03]: J3: Start= 0.701 -> Target=-0.768 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310721224] [benchmark_node_03]: J4: Start= 1.151 -> Target=-3.099 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310729537] [benchmark_node_03]: J5: Start=-0.000 -> Target=-0.264 | Limit=+/-3.140 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310738195] [benchmark_node_03]: J6: Start=-1.835 -> Target= 3.142 | Limit=+/-4.710 [OK]
+[benchmark_node_03-1] [INFO] [1768547668.310828044] [move_group_interface]: MoveGroup action client/server ready
+[benchmark_node_03-1] [INFO] [1768547668.312450655] [move_group_interface]: Planning request accepted
+[benchmark_node_03-1] [INFO] [1768547668.321520417] [move_group_interface]: Planning request aborted
+[benchmark_node_03-1] [ERROR] [1768547668.324339958] [move_group_interface]: MoveGroupInterface::plan() failed or timeout reached
+[benchmark_node_03-1] [ERROR] [1768547668.324382404] [benchmark_node_03]: 规划失败!
+[benchmark_node_03-1] [INFO] [1768547668.324703808] [benchmark_node_03]: 所有实验结束，节点关闭。
+[INFO] [benchmark_node_03-1]: process has finished cleanly [pid 16457]

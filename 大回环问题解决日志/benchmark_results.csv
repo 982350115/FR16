@@ -1,0 +1,4 @@
+Algorithm,PlanningTime,PathLength,Success
+RRTConnect,0,1.39178,true
+RRTStar,0,1.3673,true
+Pilz_PTP,0,1.36768,true
